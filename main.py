@@ -1,7 +1,9 @@
-from turtle import Turtle, Screen
+from turtle import Screen
 import time
 
+from food import Food
 from snake import Snake
+from score import Score
 
 # board game
 screen = Screen()
@@ -11,14 +13,33 @@ screen.title("Snake Game")
 #disable default Turtle animation
 screen.tracer(0)
 
-my_snake = Snake()
+# create snake
+snake = Snake()
 
-#snake animation
+# create food
+food = Food()
+
+# create score 
+score = Score()
+
+# listen keys
+screen.listen()
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
+
+
+# snake animation
 game_is_on = True
 
 while game_is_on:
     screen.update()
-    time.sleep(0.5)
-    my_snake.move()
+    time.sleep(0.1)
+    snake.move()
 
+    if snake.head.distance(food) < 15:
+        food.refresh()
+        score.increase_score()
+    
 screen.exitonclick()
