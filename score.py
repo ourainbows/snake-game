@@ -1,4 +1,3 @@
-from tkinter import font
 from turtle import Turtle
 
 ALIGN = "center"
