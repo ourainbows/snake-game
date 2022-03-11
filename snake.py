@@ -1,4 +1,3 @@
-from tkinter import RIGHT
 from turtle import Turtle
 
 #build snake body
