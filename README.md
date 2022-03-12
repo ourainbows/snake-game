@@ -5,4 +5,4 @@ We build this game with python and turtle.
 
 ## Start Project
 ```bash
-python main.py# snake-game
+python main.py
